@@ -10,7 +10,7 @@ int main() {
 		cout<<"2.Sumatoria"<<endl;
 		cout<<"3.Raiz en iteracion"<<endl;
 		cout<<"4.Salir"<<endl;
-		cout<<"Eliga una opción: ";
+		cout<<"Eliga una opcion: ";
 		cin>>menu;
 
 
@@ -61,9 +61,58 @@ int main() {
 
 
 		}//fin if 2;
+		if(menu == 3) {
+			double n = 0.0;
+			int t = 0;
+			double mitad = 0.0;
+			double inicio = 0.0;
+			double prod = 0.0;
+			cout<<"Ingrese n: ";
+			cin>> n;
+			double final = n;
+			cout<<"Ingrese un numero entero mayor a 10 para t: ";
+			cin>>t;
+			while(t<=10) {
+				cout<<"Ingrese un valor para n que sea positivo: ";
+				cin>>t;
+			}
+			for(int i = 1; i<=t; i++) {
+				cout<<"Iteracion "<<i<<" max = "<<final<<", ";
 
+				mitad = (inicio + final)/2.0;
 
+				cout<<"Mitad = "<<mitad<<", ";
+				prod= mitad*mitad;
+				cout<<"inicio = "<<inicio<<", "<<mitad<<" * "<<mitad<<" = "<<prod;
+				if(prod > n) {
+					cout<<", "<<prod<<" > "<<n<<endl;
+					final = mitad;
+
+				} else {
+					if(prod<n) {
+						cout<<", "<<prod<<" < "<<n<<endl;
+						inicio = mitad;
+
+					}
+				}
+					cout<<"p= "<<prod<<" N = "<<n<<endl;
+				if((double)prod == (double)n ) {
+					cout<<"estoy"<<endl;
+
+					cout<<"La raiz es: "<<mitad<<endl;
+					i=t+1;
+				}
+
+			}
+			if(prod != n) {
+				cout<<"La aproximacion es : "<<mitad<<endl;
+			}
+			//cout<<"La raiz es: "<<mitad<<endl;
+
+		}
 	}// fin while menu
+
+
 
 
 	return 0;
