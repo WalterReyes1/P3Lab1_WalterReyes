@@ -66,7 +66,7 @@ int main() {
 			int t = 0;
 			double mitad = 0.0;
 			double inicio = 0.0;
-			double prod = 0.0;
+			
 			cout<<"Ingrese n: ";
 			cin>> n;
 			double final = n;
@@ -76,35 +76,33 @@ int main() {
 				cout<<"Ingrese un valor para n que sea positivo: ";
 				cin>>t;
 			}
-			for(int i = 1; i<=t; i++) {
-				cout<<"Iteracion "<<i<<" max = "<<final<<", ";
+			for(int i = 0; i<t; i++) {
+				cout<<"Iteracion "<<i+1<<" Final = "<<final<<", ";
 
 				mitad = (inicio + final)/2.0;
 
 				cout<<"Mitad = "<<mitad<<", ";
-				prod= mitad*mitad;
-				cout<<"inicio = "<<inicio<<", "<<mitad<<" * "<<mitad<<" = "<<prod;
-				if(prod > n) {
-					cout<<", "<<prod<<" > "<<n<<endl;
+			
+				cout<<"inicio = "<<inicio<<", "<<mitad<<" * "<<mitad<<" = "<<mitad*mitad;
+
+
+				if(mitad*mitad > n) {
+					cout<<", "<<mitad*mitad<<" > "<<n<<endl;
 					final = mitad;
 
-				} else {
-					if(prod<n) {
-						cout<<", "<<prod<<" < "<<n<<endl;
-						inicio = mitad;
-
-					}
+				} 
+				if(mitad*mitad<n){
+					cout<<", "<<mitad*mitad<<" < "<<n<<endl;
+					inicio = mitad;
 				}
-					cout<<"p= "<<prod<<" N = "<<n<<endl;
-				if((double)prod == (double)n ) {
-					cout<<"estoy"<<endl;
-
+				if(mitad*mitad == n ) {
+					cout<<endl;
 					cout<<"La raiz es: "<<mitad<<endl;
-					i=t+1;
+					break;
 				}
 
 			}
-			if(prod != n) {
+			if(mitad*mitad != n) {	
 				cout<<"La aproximacion es : "<<mitad<<endl;
 			}
 			//cout<<"La raiz es: "<<mitad<<endl;
